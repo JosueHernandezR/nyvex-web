@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@import '../lib/styles/design-system-colors.css';
+@import '../lib/styles/design-system-typography.css';
+
+/* Base styles - Nyvex Design System */
+@layer base {
+	html {
+		@apply antialiased;
+	}
+	body {
+		@apply min-h-screen bg-nyvex-bg-primary text-nyvex-text-primary;
+	}
+}

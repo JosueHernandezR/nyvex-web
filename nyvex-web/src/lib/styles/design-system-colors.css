@@ -1,0 +1,81 @@
+/**
+ * Nyvex Design System - Design Tokens
+ * Compatible con Tailwind CSS v4
+ *
+ * Uso con utilidades Tailwind:
+ *   bg-nyvex-primary, text-nyvex-secondary, border-nyvex-border
+ *   bg-nyvex-gradient-primary, bg-nyvex-gradient-bg, bg-nyvex-glow
+ */
+
+@theme {
+  /* ========== Primary Brand Colors ========== */
+  --color-nyvex-primary: #00e5ff;
+  --color-nyvex-primary-dark: #00bcd4;
+  --color-nyvex-primary-light: #00ffe5;
+
+  /* ========== Secondary Colors ========== */
+  --color-nyvex-secondary: #7b2fff;
+  --color-nyvex-secondary-dark: #5a1fd9;
+
+  /* ========== Backgrounds ========== */
+  --color-nyvex-bg-primary: #0a0e27;
+  --color-nyvex-bg-secondary: #0d1117;
+  --color-nyvex-bg-tertiary: #161b22;
+
+  /* ========== Text Colors ========== */
+  --color-nyvex-text-primary: #ffffff;
+  --color-nyvex-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-nyvex-text-tertiary: rgba(255, 255, 255, 0.5);
+
+  /* ========== Semantic Colors ========== */
+  --color-nyvex-success: #00ffa3;
+  --color-nyvex-warning: #ffb800;
+  --color-nyvex-error: #ff3366;
+  --color-nyvex-info: #00e5ff;
+
+  /* ========== Borders & Dividers ========== */
+  --color-nyvex-border: rgba(255, 255, 255, 0.1);
+  --color-nyvex-divider: rgba(255, 255, 255, 0.05);
+
+  /* ========== Background Images (Gradients & Effects) ========== */
+  --background-image-nyvex-gradient-primary: linear-gradient(
+    135deg,
+    #00e5ff 0%,
+    #7b2fff 100%
+  );
+  --background-image-nyvex-gradient-bg: linear-gradient(
+    180deg,
+    #0a0e27 0%,
+    #0d1117 100%
+  );
+  --background-image-nyvex-glow: radial-gradient(
+    circle at center,
+    rgba(0, 229, 255, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+/* Variables adicionales para uso en CSS custom (no generan utilidades) */
+:root {
+  /* Alias para acceso directo vía var() en estilos custom */
+  --nyvex-primary: var(--color-nyvex-primary);
+  --nyvex-primary-dark: var(--color-nyvex-primary-dark);
+  --nyvex-primary-light: var(--color-nyvex-primary-light);
+  --nyvex-secondary: var(--color-nyvex-secondary);
+  --nyvex-secondary-dark: var(--color-nyvex-secondary-dark);
+  --nyvex-bg-primary: var(--color-nyvex-bg-primary);
+  --nyvex-bg-secondary: var(--color-nyvex-bg-secondary);
+  --nyvex-bg-tertiary: var(--color-nyvex-bg-tertiary);
+  --nyvex-text-primary: var(--color-nyvex-text-primary);
+  --nyvex-text-secondary: var(--color-nyvex-text-secondary);
+  --nyvex-text-tertiary: var(--color-nyvex-text-tertiary);
+  --nyvex-success: var(--color-nyvex-success);
+  --nyvex-warning: var(--color-nyvex-warning);
+  --nyvex-error: var(--color-nyvex-error);
+  --nyvex-info: var(--color-nyvex-info);
+  --nyvex-border: var(--color-nyvex-border);
+  --nyvex-divider: var(--color-nyvex-divider);
+  --nyvex-gradient-primary: var(--background-image-nyvex-gradient-primary);
+  --nyvex-gradient-bg: var(--background-image-nyvex-gradient-bg);
+  --nyvex-glow: var(--background-image-nyvex-glow);
+}
