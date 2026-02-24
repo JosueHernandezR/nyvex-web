@@ -6,8 +6,74 @@
 @layer base {
 	html {
 		@apply antialiased;
+		scroll-behavior: smooth;
 	}
 	body {
 		@apply min-h-screen bg-nyvex-bg-primary text-nyvex-text-primary;
+	}
+}
+
+/* Tipografía responsiva para headlines de landing */
+@layer components {
+	.display-hero-responsive {
+		font-family: var(--font-satoshi);
+		font-weight: 700;
+		letter-spacing: -0.25px;
+		line-height: 1.1;
+		font-size: 2rem; /* 32px - mobile */
+	}
+	@media (min-width: 640px) {
+		.display-hero-responsive {
+			font-size: 2.5rem; /* 40px */
+		}
+	}
+	@media (min-width: 768px) {
+		.display-hero-responsive {
+			font-size: 3.5rem; /* 56px */
+		}
+	}
+	@media (min-width: 1024px) {
+		.display-hero-responsive {
+			font-size: 5rem; /* 80px */
+		}
+	}
+	@media (min-width: 1280px) {
+		.display-hero-responsive {
+			font-size: 6rem; /* 96px */
+		}
+	}
+	@media (min-width: 1536px) {
+		.display-hero-responsive {
+			font-size: 8rem; /* 128px - display-large */
+		}
+	}
+
+	/* Headlines de sección (About, Contact) - un escalón menor */
+	.section-headline-responsive {
+		font-family: var(--font-satoshi);
+		font-weight: 700;
+		letter-spacing: -0.25px;
+		line-height: 1.2;
+		font-size: 1.75rem; /* 28px - mobile */
+	}
+	@media (min-width: 640px) {
+		.section-headline-responsive {
+			font-size: 2.25rem; /* 36px */
+		}
+	}
+	@media (min-width: 768px) {
+		.section-headline-responsive {
+			font-size: 3rem; /* 48px */
+		}
+	}
+	@media (min-width: 1024px) {
+		.section-headline-responsive {
+			font-size: 4rem; /* 64px */
+		}
+	}
+	@media (min-width: 1280px) {
+		.section-headline-responsive {
+			font-size: 5rem; /* 80px */
+		}
 	}
 }
