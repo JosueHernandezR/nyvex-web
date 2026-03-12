@@ -1,13 +1,15 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import { onMount } from 'svelte';
 	import { Nav } from '$lib/components/layouts/nav';
+	import { theme } from '$lib/stores/theme';
 
-	// children es un snippet de Svelte 5 - el contenido de cada página
 	let { children }: { children: import('svelte').Snippet } = $props();
+
+	onMount(() => theme.init());
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<title>NYVEX — The New Wave of Private AI</title>
 </svelte:head>
 
 <Nav />

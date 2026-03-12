@@ -5,6 +5,7 @@
  * Uso con utilidades Tailwind:
  *   bg-nyvex-primary, text-nyvex-secondary, border-nyvex-border
  *   bg-nyvex-gradient-primary, bg-nyvex-gradient-bg, bg-nyvex-glow
+ *   bg-nyvex-surface, text-nyvex-on-surface (theme-aware)
  */
 
 @theme {
@@ -17,15 +18,23 @@
   --color-nyvex-secondary: #7b2fff;
   --color-nyvex-secondary-dark: #5a1fd9;
 
-  /* ========== Backgrounds ========== */
+  /* ========== Explicit Dark Backgrounds ========== */
   --color-nyvex-bg-primary: #0a0e27;
   --color-nyvex-bg-secondary: #0d1117;
   --color-nyvex-bg-tertiary: #161b22;
 
-  /* ========== Text Colors ========== */
+  /* ========== Explicit Light Backgrounds ========== */
+  --color-nyvex-bg-light: #f8f6f6;
+  --color-nyvex-bg-white: #ffffff;
+
+  /* ========== Explicit Text Colors ========== */
   --color-nyvex-text-primary: #ffffff;
   --color-nyvex-text-secondary: rgba(255, 255, 255, 0.7);
   --color-nyvex-text-tertiary: rgba(255, 255, 255, 0.5);
+  --color-nyvex-text-dark: #0f172a;
+  --color-nyvex-text-dark-secondary: #334155;
+  --color-nyvex-text-dark-tertiary: #64748b;
+  --color-nyvex-text-dark-muted: #94a3b8;
 
   /* ========== Semantic Colors ========== */
   --color-nyvex-success: #00ffa3;
@@ -33,9 +42,25 @@
   --color-nyvex-error: #ff3366;
   --color-nyvex-info: #00e5ff;
 
-  /* ========== Borders & Dividers ========== */
+  /* ========== Explicit Borders ========== */
   --color-nyvex-border: rgba(255, 255, 255, 0.1);
+  --color-nyvex-border-light: rgba(226, 232, 240, 1);
   --color-nyvex-divider: rgba(255, 255, 255, 0.05);
+  --color-nyvex-divider-light: rgba(241, 245, 249, 1);
+  --color-nyvex-glass-white: rgba(255, 255, 255, 0.4);
+  --color-nyvex-glass-border: rgba(255, 255, 255, 0.5);
+
+  /* ========== Theme-Aware Semantic Tokens ========== */
+  --color-nyvex-surface: var(--_nyvex-surface);
+  --color-nyvex-surface-alt: var(--_nyvex-surface-alt);
+  --color-nyvex-on-surface: var(--_nyvex-on-surface);
+  --color-nyvex-on-surface-variant: var(--_nyvex-on-surface-variant);
+  --color-nyvex-on-surface-muted: var(--_nyvex-on-surface-muted);
+  --color-nyvex-on-surface-faint: var(--_nyvex-on-surface-faint);
+  --color-nyvex-outline: var(--_nyvex-outline);
+  --color-nyvex-outline-dim: var(--_nyvex-outline-dim);
+  --color-nyvex-inverse-surface: var(--_nyvex-inverse-surface);
+  --color-nyvex-on-inverse-surface: var(--_nyvex-on-inverse-surface);
 
   /* ========== Background Images (Gradients & Effects) ========== */
   --background-image-nyvex-gradient-primary: linear-gradient(
@@ -55,27 +80,51 @@
   );
 }
 
-/* Variables adicionales para uso en CSS custom (no generan utilidades) */
+/* ========== Light Theme (default) ========== */
 :root {
-  /* Alias para acceso directo vía var() en estilos custom */
+  --_nyvex-surface: #f8f6f6;
+  --_nyvex-surface-alt: #ffffff;
+  --_nyvex-on-surface: #0f172a;
+  --_nyvex-on-surface-variant: #334155;
+  --_nyvex-on-surface-muted: #64748b;
+  --_nyvex-on-surface-faint: #94a3b8;
+  --_nyvex-outline: rgba(226, 232, 240, 1);
+  --_nyvex-outline-dim: rgba(241, 245, 249, 1);
+  --_nyvex-inverse-surface: #0f172a;
+  --_nyvex-on-inverse-surface: #ffffff;
+
+  --_nyvex-glass-bg: rgba(255, 255, 255, 0.4);
+  --_nyvex-glass-border: rgba(255, 255, 255, 0.5);
+  --_nyvex-glass-hover: rgba(255, 255, 255, 0.5);
+  --_nyvex-body-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #f8f6f6 100%);
+  --_nyvex-shadow: 148 163 184;
+
   --nyvex-primary: var(--color-nyvex-primary);
   --nyvex-primary-dark: var(--color-nyvex-primary-dark);
   --nyvex-primary-light: var(--color-nyvex-primary-light);
   --nyvex-secondary: var(--color-nyvex-secondary);
   --nyvex-secondary-dark: var(--color-nyvex-secondary-dark);
-  --nyvex-bg-primary: var(--color-nyvex-bg-primary);
-  --nyvex-bg-secondary: var(--color-nyvex-bg-secondary);
-  --nyvex-bg-tertiary: var(--color-nyvex-bg-tertiary);
-  --nyvex-text-primary: var(--color-nyvex-text-primary);
-  --nyvex-text-secondary: var(--color-nyvex-text-secondary);
-  --nyvex-text-tertiary: var(--color-nyvex-text-tertiary);
-  --nyvex-success: var(--color-nyvex-success);
-  --nyvex-warning: var(--color-nyvex-warning);
-  --nyvex-error: var(--color-nyvex-error);
-  --nyvex-info: var(--color-nyvex-info);
-  --nyvex-border: var(--color-nyvex-border);
-  --nyvex-divider: var(--color-nyvex-divider);
   --nyvex-gradient-primary: var(--background-image-nyvex-gradient-primary);
   --nyvex-gradient-bg: var(--background-image-nyvex-gradient-bg);
   --nyvex-glow: var(--background-image-nyvex-glow);
+}
+
+/* ========== Dark Theme ========== */
+.dark {
+  --_nyvex-surface: #0a0e27;
+  --_nyvex-surface-alt: #0d1117;
+  --_nyvex-on-surface: #ffffff;
+  --_nyvex-on-surface-variant: rgba(255, 255, 255, 0.7);
+  --_nyvex-on-surface-muted: rgba(255, 255, 255, 0.5);
+  --_nyvex-on-surface-faint: rgba(255, 255, 255, 0.3);
+  --_nyvex-outline: rgba(255, 255, 255, 0.1);
+  --_nyvex-outline-dim: rgba(255, 255, 255, 0.05);
+  --_nyvex-inverse-surface: #ffffff;
+  --_nyvex-on-inverse-surface: #0f172a;
+
+  --_nyvex-glass-bg: rgba(13, 17, 23, 0.6);
+  --_nyvex-glass-border: rgba(255, 255, 255, 0.1);
+  --_nyvex-glass-hover: rgba(255, 255, 255, 0.08);
+  --_nyvex-body-gradient: radial-gradient(circle at 50% 0%, #0d1117 0%, #0a0e27 100%);
+  --_nyvex-shadow: 0 0 0;
 }
