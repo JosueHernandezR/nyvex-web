@@ -78,19 +78,21 @@
 				<!-- Desktop dropdown -->
 				{#if langMenuOpen}
 					<div
-						class="glass absolute top-full right-0 mt-2 hidden w-40 overflow-hidden rounded-xl shadow-xl md:block"
+						class="glass absolute top-full right-0 mt-2 hidden w-44 rounded-2xl p-2 shadow-xl md:block"
 					>
-						{#each LOCALES as loc (loc)}
-							<button
-								class="flex w-full items-center px-4 py-2.5 text-left text-sm transition-colors
-									{currentLocale === loc
-										? 'bg-nyvex-primary/10 font-semibold text-nyvex-primary'
-										: 'text-nyvex-on-surface-muted hover:bg-(--_nyvex-glass-hover) hover:text-nyvex-on-surface'}"
-								onclick={() => selectLocale(loc)}
-							>
-								{LOCALE_NAMES[loc]}
-							</button>
-						{/each}
+						<div class="flex flex-col gap-1">
+							{#each LOCALES as loc (loc)}
+								<button
+									class="rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors
+										{currentLocale === loc
+											? 'bg-nyvex-primary/10 text-nyvex-primary'
+											: 'text-nyvex-on-surface-muted hover:bg-(--_nyvex-glass-hover) hover:text-nyvex-primary'}"
+									onclick={() => selectLocale(loc)}
+								>
+									{LOCALE_NAMES[loc]}
+								</button>
+							{/each}
+						</div>
 					</div>
 				{/if}
 			</div>

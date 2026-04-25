@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "installCommand": "cd nyvex-web && npm ci",
+  "buildCommand": "cd nyvex-web && npm run build",
+  "outputDirectory": "nyvex-web/build"
+}
+

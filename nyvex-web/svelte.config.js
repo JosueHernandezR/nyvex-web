@@ -10,7 +10,12 @@ const config = {
 			assets: 'build',
 			// strict: true asegura que todas las rutas estén prerenderizadas
 			strict: true
-		})
+		}),
+		prerender: {
+			// En builds estáticos, evita fallar el deploy por anchors faltantes.
+			// (Vercel puede tratar links hash como /#id durante el crawl.)
+			handleMissingId: 'warn'
+		}
 	},
 	preprocess: [mdsvex()],
 	extensions: ['.svelte', '.svx']

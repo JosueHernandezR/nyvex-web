@@ -4,9 +4,9 @@
 	import {
 		HeroSection,
 		FeaturesGrid,
-		ComparisonTable
-		// ModelsSection,
-		// CtaBanner
+		ComparisonTable,
+		ModelsSection,
+		CtaBanner
 	} from '$lib/components/features';
 	import { SiteFooter } from '$lib/components/layouts';
 
@@ -33,8 +33,8 @@
 	<HeroSection />
 	<FeaturesGrid />
 	<ComparisonTable />
-	<!-- <ModelsSection />
-	<CtaBanner /> -->
+	<ModelsSection />
+	<CtaBanner />
 </main>
 
 <SiteFooter />
